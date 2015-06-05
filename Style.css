@@ -1,0 +1,164 @@
+/*.positioning {
+	position: absolute;
+	top: -30em;
+	left: -300em;
+}*/
+
+body {
+	padding-left : 11em;
+	background-color: #F0F8FF;
+	font-family: "Arial", Helvetica, sans-serif;
+}
+
+hr {
+   display: block;
+   position: relative;
+   padding: 0;
+   margin: 8px auto;
+   height: 0;
+   width: 100%;
+   max-height: 0;
+   font-size: 1px;
+   line-height: 0;
+   clear: both;
+   border: none;
+   border-top: 2px solid #aaaaaa;
+   border-bottom: 2px solid #ffffff;
+}
+
+h1 {
+	text-align: center;
+	color: teal;
+	font-family: cursive;
+}
+
+ul.navbar {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	top: 4em;
+	left: 1em;
+	width: 9em;
+	font-size: 15px;
+}
+
+ul.navbar li {
+	margin: 0.5em 0;
+	padding: 0.1em;
+}
+
+ul.vnavbar a {
+	text-decoration: none;
+}
+
+a.newacct:link, a.newacct:visited {
+	color: red;
+	background-color: #F0F8FF;
+	text-align: center;
+	text-decoration: underline;
+	display: inline;
+	font-size: 12px;
+}
+
+a.newacct:hover, a.newacct:active {
+	color: teal;
+	background-color: #F0F8FF;
+	font-size: 12px;
+}
+
+a:link, a:visited {
+	display: block;
+	width: 120px;
+	font-weight: bold;
+	color: white;
+	background-color: teal;
+	text-align: center;
+	padding: 4px;
+	text-decoration: none;
+}
+
+a:hover , a:active {
+	color: #DCDCDC;
+}
+
+/*http://stackoverflow.com/questions/13624276/html-how-to-separate-table-rows-with-a-line*/
+table.display {
+	margin: auto;
+	border-collapse: collapse;
+	display: table;
+	font-size: 13px;
+	/*float: left;*/
+}
+
+table.display tr {
+	border: solid;
+	border-width: 0.5px 0;
+	vertical-align: middle;
+}
+
+table.display tr:first-child {
+	border-top: none;
+}
+
+table.display td {
+	vertical-align: middle;
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+}
+
+input[type=submit], input[type=button], button[type=submit], table.display button {
+	color: teal;
+	background-color: white;
+	border: 2px solid teal;
+	vertical-align: middle;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	font-family: Courier;
+}
+
+input[type=submit]:hover, input[type=button]:hover, button[type=submit]:hover, table.display button:hover {
+	color: white;
+	background-color: teal;
+	border: 2px solid teal;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	font-family: Courier;
+}
+
+p.errorMsg {
+	color: red;
+}
+
+p.loginStatus {
+	text-align: right;
+	font-size: 13px;
+}
+
+table.login {
+	font-family: Courier;
+}
+
+/*http://stackoverflow.com/questions/7810549/how-to-make-a-text-box-have-rounded-corners*/
+table.login input[type=text], table.login input[type=password], table.login input[type=submit]{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: solid teal;
+	font-family: Courier;
+}
+
+/*http://stackoverflow.com/questions/19414856/how-can-i-make-all-images-of-different-height-and-width-the-same-via-css*/
+.images {
+    position: relative;
+    float: left;
+    width:  200px;
+    height: 200px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+	border-radius: 20px;
+}
+
