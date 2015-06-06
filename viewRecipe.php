@@ -86,7 +86,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		while ($viewRecipe->fetch()){
 			echo '<h1>' . $rName . '</h1>';
 			echo '<hr>';
-			echo '<table>';
+			echo '<table class="view" width="70%">';
 			echo '<tr><td>Description:</td><td>' . $rDesc . '</td></tr>';
 			echo '<tr><td>Serves:</td><td>' . $rServings . '</td></tr>';
 			echo '<tr><td>Time:</td><td>' . $rTime . '&nbsp;minutes</td></tr>';
