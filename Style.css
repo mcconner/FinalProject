@@ -1,8 +1,8 @@
-/*.positioning {
-	position: absolute;
-	top: -30em;
-	left: -300em;
-}*/
+/*
+Rachael McConnell
+Spring 2015
+CS290 & CS340
+*/
 
 body {
 	padding-left : 11em;
@@ -80,6 +80,10 @@ a:link, a:visited {
 
 a:hover , a:active {
 	color: #DCDCDC;
+}
+
+table.view {
+	font-size: 13px;
 }
 
 /*http://stackoverflow.com/questions/13624276/html-how-to-separate-table-rows-with-a-line*/
@@ -161,4 +165,5 @@ table.login input[type=text], table.login input[type=password], table.login inpu
     background-size:     cover;
 	border-radius: 20px;
 }
+
 
