@@ -40,6 +40,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 <body>
 
 	<?php 
+	//display navigation menu 
 	if(isset($_SESSION['username']) && !empty($_SESSION['username'])){
 		?>
 		<ul class="navbar">

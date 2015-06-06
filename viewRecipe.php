@@ -3,6 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 include 'secret.php';
 
+//start session or continue session 
 session_start();
 if(isset($_SESSION['username']) || !empty($_SESSION['username'])){
 	$username = $_SESSION['username'];
@@ -12,12 +13,14 @@ if(isset($_SESSION['username']) || !empty($_SESSION['username'])){
 	echo '<p class="loginStatus">You are not logged in.</p>';
 }
 
+//create database connection 
 $mysqli = new mysqli("oniddb.cws.oregonstate.edu", "mcconner-db", $password, "mcconner-db");
 if($mysqli->connect_errno){
 	echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
+	//if user selected to view a recipe, grab data for the specified recipe from the database 
 	if(isset($_POST['viewRecipe']) && !empty($_POST['viewRecipe'])){
 		$recipeIdToView = $_POST['viewRecipe'];
 		$viewCat = $mysqli->prepare("SELECT catName FROM r_Category INNER JOIN r_Recipes ON catId = rCatId WHERE rId = ?");
@@ -64,6 +67,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 <body>	
 	<?php 
 		if(isset($_SESSION['username']) && !empty($_SESSION['username'])){
+			//show navigation menu 
 			?>
 			<ul class="navbar">
 				<li><a href="RecipeMainPage.php" title="Home">Home</a></li>

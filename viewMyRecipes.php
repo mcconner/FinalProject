@@ -40,6 +40,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	<link rel="stylesheet" type="text/css" href="Style.css">
 </head>
 <body>
+	<!--display navigation menu -->
 	<ul class="navbar">
 		<li><a href="RecipeMainPage.php" title="Home">Home</a></li>
 		<li><a href="viewMyRecipes.php" title="View My Recipes">View My Recipes</a></li>

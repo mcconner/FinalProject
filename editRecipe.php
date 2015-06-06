@@ -23,6 +23,7 @@ if($mysqli->connect_errno){
 }
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
+	//initialize variables
 	$newName = '';
 	$newDesc = '';
 	$newTime = '';
@@ -36,6 +37,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	$addQ = '';
 	$addU = '';
 	
+	//get categories
 	$catList = $mysqli->query("SELECT catId, catName FROM r_Category ORDER BY catName");
 	if($catList){
 		while($row = mysqli_fetch_assoc($catList)){
@@ -44,6 +46,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		}
 	}
 	
+	//if update form was submitted 
 	if(isset($_POST['updateRecipe']) && !empty($_POST['updateRecipe'])){
 		$updateId = $_POST['updateRecipe'];
 		//check if user entered data for recipe name, description, time, servings, instructions 
@@ -76,6 +79,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		if(!empty($_POST['addUoms']))
 			$addU = $_POST['addUoms'];
 		
+		//update fields if they are not empty 
 		if($newName !== ''){
 			$updateName = $mysqli->prepare("UPDATE r_Recipes SET rName = ? WHERE rId = ?");
 			$updateName->bind_param("si", $newName, $updateId);
@@ -175,7 +179,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 			}
 		}
 		
-		//add new ingredients to ingredients table; NEXT, add ingredient id, recipe id, quantity and uom to r_RecipeIngredients
+		//add new ingredients to ingredients table
 		if(!empty($newIng)){
 			foreach($newIng as $ing){
 				if(!empty($ing)){
@@ -187,6 +191,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 			}
 		}
 		
+		//add new ingredients to ingredients table 
 		if(!empty($addIng)){
 			foreach($addIng as $i){
 				if(!empty($i)){
@@ -197,7 +202,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 				}
 			}
 		}
-		
+		//update r_RecipeIngredients 
 		for ($i = 0; $i < count($addIng); $i++){	
 			if(!empty($addIng[$i])){
 				$ingId = $mysqli->prepare("SELECT iId FROM r_Ingredients WHERE iName = ?");

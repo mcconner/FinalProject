@@ -109,7 +109,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 </head>
 <body>
 <!--http://html.cita.illinois.edu/nav/menu/menu-example-hrzt.php -->
-
+<!--show navigation bar menu -->
 <?php 
 if(isset($_SESSION['username']) && !empty($_SESSION['username'])){
 	?>

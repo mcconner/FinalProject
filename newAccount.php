@@ -3,6 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 include 'secret.php';
 
+//start session 
 session_start();
 $strMessage = '';
 
@@ -41,7 +42,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 			$strMessage = "This username is already in use.";
 		}
 	}
-	
+	//if password inputs are equal and strMessage is blank, then add new username/password combo to database 
 	if(($newPassword == $newPassword1) && ($strMessage == '')){
 		if($newUsername !== '' && $newPassword !== ''){
 			$newPword = base64_encode(hash('sha256', $newPassword));
@@ -93,7 +94,6 @@ $(document).ready(function(){
 				}  
 		   });
 		} 
-		
 	  }); 
 	}
 	else{

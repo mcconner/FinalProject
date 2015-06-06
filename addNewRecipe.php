@@ -157,6 +157,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	<!--http://www.joegarrepy.com/tableaddrow_jscript.htm
 	http://www.randomsnippets.com/2008/02/21/how-to-dynamically-add-form-elements-via-javascript/ -->
 	<script>
+		//this function adds a new ingredient input 
 		var count = 3;
 		 function addRow(in_tbl_name)
 		 {
@@ -190,7 +191,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 <body>
 <!--http://html.cita.illinois.edu/nav/menu/menu-example-hrzt.php -->
 	<script src="jquery-ui.min-1.11.1.js" type="text/javascript"></script>
-
+<!--show navigation bar menu -->
 <?php 
 if(isset($_SESSION['username']) && !empty($_SESSION['username'])){
 	?>

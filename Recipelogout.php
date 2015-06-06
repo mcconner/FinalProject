@@ -4,6 +4,7 @@ ini_set('display_errors', 'On');
 
 session_start();
 
+//end the session and log the user out 
 $_SESSION = array();
 session_destroy();
 $filePath = explode('/', $_SERVER['PHP_SELF'], -1);

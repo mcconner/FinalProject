@@ -51,6 +51,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	}
 }
 
+//display welcome message if user is logged in, else display error message 
 if(($strAction === 'welcome')){
 	echo '<p class="loginStatus">You are logged in as: ' . $_SESSION['username'] . '</p>';
 }else if($strAction === ''){
@@ -82,6 +83,7 @@ if(($strAction === 'welcome')){
 	<h1>Recipe Database</h1>
 	<hr>
 	<?php 
+	//user is logged in  
 	if(isset($_SESSION['username']) && !empty($_SESSION['username'])){
 		?>
 		<ul class="navbar">
@@ -95,6 +97,7 @@ if(($strAction === 'welcome')){
 		</ul>
 		<h3 align="center">Welcome, <?php echo $_SESSION['username'] ?>!</h3> 
 
+		<!--display pictures -->
 		<div class="images" style="background-image:url('coconutShrimp.jpg'); margin: 0px 6px 6px 35px; "></div>
 		<div class="images" style="background-image:url('splitPeaSoup.jpg'); margin: 0px 6px 6px 6px;"></div>
 		<div class="images" style="background-image:url('pestoPasta.jpg'); margin: 0px 6px 6px 6px;"></div>
@@ -108,6 +111,7 @@ if(($strAction === 'welcome')){
 
 		<?php 	
 	} else {
+		//user is not logged in 
 		?>
 		<ul class="navbar">
 			<li><a href="RecipeMainPage.php">Home</a></li>

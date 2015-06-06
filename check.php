@@ -12,6 +12,7 @@ if($mysqli->connect_errno){
 //http://www.bitrepository.com/a-simple-ajax-username-availability-checker.html
 //http://www.2my4edge.com/2013/08/autocomplete-search-using-php-mysql-and.html
 
+//if category is set, check if user input already exists in category table
 if(isset($_POST['newCategory'])){
 	$newCategory = $_POST['newCategory'];
 	
@@ -27,7 +28,7 @@ if(isset($_POST['newCategory'])){
 	} else {
 		echo 'OK';
 	}
-	
+//if username is set, check if username is already taken 
 }else if(isset($_POST['username'])) {
 	$username = $_POST['username'];
  

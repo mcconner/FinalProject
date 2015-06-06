@@ -3,6 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 include 'secret.php';
 
+//start session, redirect if not logged in 
 session_start();
 if(isset($_SESSION['username']) || !empty($_SESSION['username'])){
 	$username = $_SESSION['username'];
@@ -14,6 +15,7 @@ if(isset($_SESSION['username']) || !empty($_SESSION['username'])){
 	header("location: {$redirect}/RecipeMainPage.php", true);
 }
 
+//create database connection 
 $mysqli = new mysqli("oniddb.cws.oregonstate.edu", "mcconner-db", $password, "mcconner-db");
 if($mysqli->connect_errno){
 	echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
@@ -29,6 +31,7 @@ if($mysqli->connect_errno){
 </head>
 <body>
 
+<!-- create navigation menu -->
 <ul class="navbar">
 	<li><a href="RecipeMainPage.php" title="Home">Home</a></li>
 	<li><a href="viewMyRecipes.php" title="View My Recipes">View My Recipes</a></li>
@@ -54,6 +57,7 @@ if($mysqli->connect_errno){
 			echo '<form style="text-align: center" method="POST" action="editRecipe.php" name="editRecipe" value="-SELECT-">';
 			echo '<select name="editRecipe">';
 			echo '<option disabled="disabled" selected="selected" style="display:none" value="All">-Select a Recipe-</option>';
+			//create dropdown list 
 			while($ddRecipes->fetch()){
 				array_push($cArr, $rList);
 				echo "<option value='" . $id . "'>" . $rList . "</option>";
