@@ -142,7 +142,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 		$addCreatorId->close();
 		
 		echo "Recipe " . $recipeName . " has been successfully added!";
-	
 	}
 }
 
@@ -314,16 +313,6 @@ if(isset($_SESSION['username']) && !empty($_SESSION['username'])){
 			 });
 		});
     </script>
-	   
-	      <!-- <script>
-         $(document).ready(function () {
-             var ingredTags = [<?php echo $IngredList ?>];
-             $("#txtIngred").autocomplete({
-                 source: ingredTags
-             });
-         });
-    </script>-->
-
 
 </body>
 </html>
